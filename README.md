@@ -1,3 +1,8 @@
+
+Angular project based on Angular Best Practice Guidelines
+
+Yeoman, Grunt
+
 # Installation
 
 npm install
