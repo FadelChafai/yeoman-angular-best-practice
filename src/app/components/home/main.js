@@ -1,27 +1,44 @@
 (function() {
-'use strict';
+    'use strict';
 
-/**
- * @ngdoc function
- * @name myApp.controller:MainCtrl
- * @description
- * # MainCtrl
- * Controller of the myApp
- */
+    /**
+     * @ngdoc function
+     * @name myApp.home.controller:MainCtrl
+     * @description
+     * # MainCtrl
+     * Controller of the myApp.home
+     */
 
-angular.module('myApp').controller('MainCtrl', MainCtrl);
+    angular.module('myApp.home', ['ui.router'])
+        .config(config)
+        .controller('MainCtrl', MainCtrl);
 
-function MainCtrl($scope) {
+    config.$inject = ['$stateProvider'];
 
-  $scope.todos = [];
+    function config($stateProvider) {
+        $stateProvider
+            .state('home', {
+                url: '/',
+                templateUrl: 'app/components/home/main.html',
+                controller: 'MainCtrl',
+                controllerAs: 'vm'
+            });
+    }
 
-  $scope.addTodo = function() {
-    $scope.todos.push($scope.todo);
-    $scope.todo = '';
-  };
+    function MainCtrl() {
 
-  $scope.removeTodo = function(index) {
-    $scope.todos.splice(index, 1);
-  };
-}
+        var vm = this;
+        vm.todos = [];
+        vm.addTodo = addTodo;
+        vm.removeTodo = removeTodo;
+
+        function addTodo() {
+            vm.todos.push(vm.todo);
+            vm.todo = '';
+        }
+
+        function removeTodo(index) {
+            vm.todos.splice(index, 1);
+        }
+    }
 })();
