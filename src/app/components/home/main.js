@@ -3,13 +3,13 @@
 
 /**
  * @ngdoc function
- * @name bstrapdevApp.controller:MainCtrl
+ * @name myApp.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the bstrapdevApp
+ * Controller of the myApp
  */
 
-angular.module('bstrapdevApp').controller('MainCtrl', MainCtrl);
+angular.module('myApp').controller('MainCtrl', MainCtrl);
 
 function MainCtrl($scope) {
 

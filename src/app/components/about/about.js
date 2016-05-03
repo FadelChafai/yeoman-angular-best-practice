@@ -3,12 +3,12 @@
 
   /**
    * @ngdoc function
-   * @name bstrapdevApp.controller:AboutCtrl
+   * @name myApp.controller:AboutCtrl
    * @description
    * # AboutCtrl
-   * Controller of the bstrapdevApp
+   * Controller of the myApp
    */
-  angular.module('bstrapdevApp')
+  angular.module('myApp')
     .controller('AboutCtrl', AboutCtrl);
 
   function AboutCtrl($scope) {

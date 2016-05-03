@@ -3,7 +3,7 @@
 
   /**
    * @ngdoc overview
-   * @name bstrapdevApp
+   * @name myApp
    * @description
    * Main module of the application.
    */
