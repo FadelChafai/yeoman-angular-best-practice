@@ -38,7 +38,7 @@
   }
 
   angular
-    .module('bstrapdevApp', [
+    .module('myApp', [
       'ngResource',
       'ui.router',
       'ngSanitize',
