@@ -1,6 +1,7 @@
 composer.lock
 bower_components/*
 node_modules/*
+.tmp/
 *.swp
 *~
 
