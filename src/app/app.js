@@ -25,17 +25,6 @@
     .config(config)
     .constant('__env', __env);
 
+    config.$inject = ['$urlRouterProvider', '$logProvider', '$resourceProvider'];
+
 })(angular);
-/*
-$stateProvider
-  .state('home', {
-    url: '/',
-    templateUrl: 'app/components/home/main.html',
-    controller: 'MainCtrl'
-  })
-  .state('about', {
-    url: '/about',
-    templateUrl: 'app/components/about/about.html',
-    controller: 'AboutCtrl'
-  });
-*/
