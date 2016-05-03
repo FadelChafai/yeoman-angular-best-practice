@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title>Chargement en cours... </title>
+<script type='text/javascript'>
+
+		var callbackResponse = location.href.split("#")[1];
+
+		var responseParameters=[];
+
+		if(callbackResponse){
+			responseParameters = callbackResponse.split("&");
+		}
+		var parameterMap = [];
+		var redirectUrl = window.location.protocol + "//" + document.location.host;
+
+		for (var i = 0; i < responseParameters.length; i++) {
+			parameterMap[responseParameters[i].split("=")[0]] = responseParameters[i].split("=")[1];
+		}
+
+		if (parameterMap.access_token !== undefined && parameterMap.access_token !== null) {
+
+			var user = {
+				oauth : {
+					access_token : parameterMap.access_token,
+					expires_in : parseInt(parameterMap.expires_in) + Math.floor(Date.now() / 1000)
+				}
+			};
+
+			window.localStorage.setItem("user", JSON.stringify(user));
+
+			setTimeout(location.href = redirectUrl + "/cockpit/#/setUser", 0);
+
+		} else{
+			setTimeout(location.href = redirectUrl , 0);
+		}
+	</script>
+</head>
+	<body>
+	Chargement en cours...
+	</body>
+</html>
